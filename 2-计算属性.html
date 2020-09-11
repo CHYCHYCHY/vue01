@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 输出hello world的倒序dlrow olleh -->
+        <!-- {{msg.split("").reverse().join("")}} -->
+        {{reverseMsg}}
+        <hr />
+        {{reverseMessage()}}
+
+    </div>
+    <script>
+        // method 和 computed 有什么区别的？
+        // computed
+        // 1. 清晰的表达
+        // 2. 缓存（computed有缓存，不会重复，减少函数调用。性能有优化）
+        // 多对1 的关系
+        // 依赖好几个值返回一个属性值
+        app = new Vue({
+            el: "#app",   //对应上面的div的app
+            data: {
+                msg: "hello world",
+            },
+            methods: {
+                reverseMessage() {
+                    console.log("123");
+                    return this.msg.split("").reverse().join("");
+                },
+            },
+            // 计算属性
+            computed: {
+                reverseMsg() {
+                    console.log("222");
+                    // 如何写好代码
+                    // 1. 表达好代码的意图
+                    // 2. 写测试
+                    // 3. 减少重复
+                    return this.msg.split("").reverse().join("");
+                },
+            },
+
+        });
+    </script>
+</body>
+
+</html>

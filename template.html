@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- v-bind对test的值进行改动 简写为:   -->
+    <!-- <div id="app" v-bind:test="test">{{msg}}</div> -->
+    <!-- 后面可以加数据 -->
+    <div id="app" :test="test+'123'">{{msg+"12312312"}}</div>
+    <script>
+        // console.log(Vue);
+
+        // hello world
+        // view 视图  上面的app div
+        // model 数据模型 app的内容
+        // mvvm -> m  v vm
+        // native
+        // 1. 把数据和视图进行绑定
+        // 只需要聚焦到数据逻辑上
+        // v- 指令
+        // 文本 -> {{}}
+        //   v-bind -> :
+        // 都支持js 表达式
+
+        app = new Vue({
+            el: "#app",   //对应上面的div的app
+            data: {
+                msg: "hello world",
+                test: "vue2.0",
+            },
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{num}}
+        <!-- <button @click="handleClick('1',$event)">click</button> -->
+        <!-- once  只生效一次 修饰符 -->
+        <!-- 监听一个自定义事件，但是只触发一次。一旦触发之后，监听器就会被移除。 -->
+        <button @click.once="num++">click</button>
+    </div>
+    <script>
+        // v-on 添加事件
+        // 简写 @
+        app = new Vue({
+            el: "#app",   //对应上面的div的app
+            data: {
+                num: 0,
+                msg: "hello world",
+            },
+
+            methods: {
+                handleClick(n,e) {
+                    console.log(e);
+                    console.log('click');
+
+                },
+            },
+
+        });
+    </script>
+</body>
+
+</html>

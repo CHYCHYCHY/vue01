@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>count:{{count}}</p>
+        <p>double:{{double}}</p>
+        <button @click="add">增加</button>
+    </div>
+    <script>
+        app = new Vue({
+            el: "#app",   //对应上面的div的app
+            data: {
+                msg: "",
+                count:1,
+            },
+
+            methods: {
+                add() {
+                    this.count++;
+                },
+            },
+
+            // 会直接调用
+            computed: {
+                double() {
+                    return this.count * 2;
+                },
+            }
+
+
+
+        });
+    </script>
+</body>
+
+</html>
